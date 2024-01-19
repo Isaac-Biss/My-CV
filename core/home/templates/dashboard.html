@@ -1,0 +1,14 @@
+<!-- yourapp/templates/dashboard.html -->
+
+{% extends 'base.html' %}
+
+{% block content %}
+  <div class="container mt-5">
+    <h2>Welcome to Your Dashboard, {{ user.username }}!</h2>
+    <!-- Add your dashboard content here -->
+    <p>This is a simple dashboard template. Customize it according to your needs.</p>
+
+    <!-- Button to link to the home page -->
+    <a href="{% url 'home' %}" class="btn btn-primary">Go to Home</a>
+  </div>
+{% endblock %}

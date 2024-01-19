@@ -1,0 +1,29 @@
+<!-- yourapp/templates/login.html -->
+
+{% extends 'base.html' %}
+
+{% block content %}
+  <div class="container mt-5">
+    <h2>Login</h2>
+
+    {% if error_message %}
+      <p class="text-danger">{{ error_message }}</p>
+    {% endif %}
+
+    <form method="post" action="{% url 'login' %}">
+      {% csrf_token %}
+      
+      <div class="form-group">
+        <label for="username">Username:</label>
+        <input type="text" name="username" id="username" class="form-control" required>
+      </div>
+
+      <div class="form-group">
+        <label for="password">Password:</label>
+        <input type="password" name="password" id="password" class="form-control" required>
+      </div>
+
+      <button type="submit" class="btn btn-primary">Login</button>
+    </form>
+  </div>
+{% endblock %}
